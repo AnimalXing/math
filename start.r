@@ -28,3 +28,10 @@ dbag<-ll[protection=="d airbag"]
 hist(dbag,breaks=cutpoints,labels=TRUE,right=FALSE,col="red",
    xaxt="n",main="Left leg",xlab="Weight")
 axis(side=1,at=cutpoints)
+
+
+#question 4:
+weight<-crash$wt
+weight_kg<-weight**0.4536
+library("aplpack")
+stem.leaf(weight_kg,na.rm=T,trim.outliers=F,m=1)
