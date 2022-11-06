@@ -35,3 +35,15 @@ weight<-crash$wt
 weight_kg<-weight**0.4536
 library("aplpack")
 stem.leaf(weight_kg,na.rm=T,trim.outliers=F,m=1)
+
+#question 6:
+size<-crash$size
+bplot<-boxplot(hic~size,data=crash,main=
+  "Boxplot of hic by size",
+   xlab="size",ylab="hic",col="lightslateblue")
+stats<-bplot$stats
+
+mean<-tapply(hic,size,mean,na.rm=T)
+sd<-tapply(hic,size,sd,na.rm=T)
+n<-tapply(hic,size,length)
+max(hic,na.rm=T)
